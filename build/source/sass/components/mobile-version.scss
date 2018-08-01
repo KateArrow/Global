@@ -1,0 +1,32 @@
+.mobile-version {
+    background: #0c0c0c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    
+
+        &__title {
+            @include font-source("Montserrat_ExtraBold", 24px, #ffffff);
+            text-align: center;
+            padding: 0 4%;
+            box-sizing: border-box;
+        }
+}
+
+@media screen and (min-width: 1024px) {
+    .mobile-version {
+        display: none;
+    }
+}
+
+@media screen and (min-height: 1050px) {
+    .mobile-version {
+        display: none;
+    }
+}

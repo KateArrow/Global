@@ -1,0 +1,20 @@
+include ./common/mixins
+doctype html
+html(lang="zxx")
+  +head("title", "./css/style.css")
+  body
+    .mobile-version
+      .mobile-version__title.
+        It seems like you screen doesn't support this web site, please finde large one.
+    .perspective-page-wrapper
+      .page-wrapper
+        include components/burger      
+        include components/navigation
+        include components/hire-us-btn
+        include common/introduction-section
+        include common/slider-section
+        include common/galery-section
+        include common/contacts-section
+        include common/what-we-do-section
+      include components/aside-menu
+    script(src="js/main.js")

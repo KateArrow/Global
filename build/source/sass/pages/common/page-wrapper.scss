@@ -1,0 +1,13 @@
+.page-wrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    transition: all .3s;
+    border: 0px solid #ffffff;
+    
+    &[data-perspective="true"] {
+        transform: translateZ(-2640px) translateX(-30%) rotateY(35deg);
+        border: 10px solid #ffffff;
+        box-sizing: border-box;
+    }
+}

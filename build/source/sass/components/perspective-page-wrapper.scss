@@ -1,0 +1,7 @@
+.perspective-page-wrapper {
+    perspective: 5000px;
+    &[data-active="true"] {
+        perspective: 5000px;
+        cursor: pointer;
+    }
+}

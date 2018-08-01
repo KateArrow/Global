@@ -1,0 +1,64 @@
+.galery-section {
+    
+    &__section-content {
+        display: flex;
+        flex-direction: column;    
+        padding-top: 20px + 36px;
+        background: url(../img/galery-woman.png) 79% 0 no-repeat;
+    }
+
+    &__title-section {
+        font-size: rem(66px);
+        position: relative;
+        line-height: 1;
+        &:before { 
+            content: "";
+            position: absolute;
+            top: 104px;
+            left: 370px;
+            width: 30px;
+            height: 30px;
+            background-color: #0f33ff;
+            border-radius: 50%;
+        }
+    }
+
+    &__hire-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        margin-top: 43px;
+        width: 139px;
+        min-height: 36px;
+        @include font-source('Montserrat_Bold', 15px, #ffffff);        
+        cursor: pointer;
+        transition: all .3s;
+    }
+
+    &__hire-btn:hover &__btn-arrow {
+        transform: translateX(5px);
+    }
+
+    &__btn-arrow {
+        fill: #ffffff;
+        width: 19px;
+        height: 12px;
+        margin-left: 9px;
+        transition: all .3s;
+    }
+
+    &__galery {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: auto;
+        margin-bottom: rem(30px);
+    }
+
+    &__galery-item {
+        &:not(:last-child) {
+            margin-right: 40px;
+        }
+    }
+    
+}

@@ -1,0 +1,128 @@
+.what-we-do-section {
+
+    &__section-content {
+        padding-top: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__title-section {
+        text-align: center;
+    }
+    
+    &__form-row {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    &__item {
+        &:not(:last-child) {
+            margin-right: 50px;
+        }
+    }
+
+    &__label {
+        width: 200px;
+        height: 54px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #fff;
+        @include font-source('Montserrat_Bold', 16px, #ffffff);        
+        box-sizing: border-box;
+        transition: all .3s;
+        cursor: pointer;        
+    }
+    
+    &__checkbox {
+        display: none;
+    }
+
+    &__checkbox:checked + label {
+        background: #0f33ff;
+        border: none;
+    }
+
+    &__checkbox:checked + label > &__select-ico {
+        width: 15px;
+        height: 10px;
+    }
+
+    &__select-ico {
+        width: 0px;
+        height: 0px;
+        fill: #ffffffff;
+        margin-right: 6px;
+        transition: all .3s;
+    }
+
+    &__inputs-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 72%;
+        margin: 73px auto 0;
+    }
+
+    &__input-wrapp {
+        width: 50%;        
+        position: relative;
+        &:not(:last-child) {
+            margin-right: 60px;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        height: 32px;
+        border: none;   
+        border-bottom: 2px solid #ffffff;
+        background: none;
+        outline: none;
+        box-shadow: none;
+        padding-bottom: 6px;
+        @include font-source('Montserrat_Regular', 30px, #ffffff);                
+        
+        &:focus {
+            background: none;
+            outline: none;
+        }
+
+    }
+
+    &__input:valid + &__send-form-label {
+        top: -20px;
+        font-size: rem(14px);
+    }
+
+    &__send-form-label {
+        position: absolute;
+        top: 0;
+        left: 0%;
+        @include font-source('Montserrat_Regular', 30px, #ffffff);                        
+        transition: all .2s;
+        cursor: text;
+    }
+
+    &__send-form-button {
+        margin: 40px auto 0;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 400px;
+        height: 52px;
+        @include font-source('Montserrat_Regular', 30px, #ffffff);                
+        background: #0f33ff;        
+        cursor: pointer;
+            &:active, &:focus {
+                border: none;
+                outline: none;
+                box-shadow: none;
+            }
+    }
+}

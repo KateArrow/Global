@@ -1,0 +1,86 @@
+$offset: 67px;
+
+.navigation {
+
+    position: fixed;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    width: 100%;
+    max-width: 95px;
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    z-index: 10;
+
+    user-select: none;
+
+    & * {
+        user-select: none;
+    }
+    
+    &:before {
+        display: block;
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 2px;
+        height: 120%;
+        max-height: 750px;
+        background-color: #555;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        @include opacity(0.35);
+    }
+    
+    &__item {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        @include font-source('Montserrat_Regular', 14px, #555555);        
+        font-weight: bold;
+        cursor: pointer;
+        transition: all .3s;
+        &::before {
+            position: absolute;
+            display: block;
+            left: 50%;
+            content: '';
+            width: 2px;
+            height: 2px;
+            background: #ffffff;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: all .5s;
+        }
+
+        &[data-active="true"] {
+            color: #ffffff;
+
+            .navigation__section-name {
+                @include opacity(1);
+                order: 3;            
+                margin-left: 49px;    
+            }
+
+            &::before {
+                background: #0f33ff;
+            }
+        }
+        
+    }
+
+    &__section-name {
+        order: 1;
+        @include opacity(0);
+        white-space: nowrap;
+        transition: all .2s;
+    }
+
+    &__section-num {
+        transition: all .3s;        
+        order: 2;
+    }
+    
+}

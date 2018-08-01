@@ -1,0 +1,123 @@
+@function rem($px) {
+  @return $px / $main-fz + 0rem;
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  @if $content {
+    content: $content;
+  }
+  @if $display {
+    display: $display;
+  }
+  @if $pos {
+    position: $pos;
+  }
+}
+
+@mixin css-triangle($color, $direction, $size: 50px, $position: absolute, $round: false){
+  @include pseudo($pos: $position);
+  width: 0;
+  height: 0;
+  @if $round {
+      border-radius: 3px;
+  }
+  @if $direction == down {
+      border-left: $size solid transparent;
+      border-right: $size solid transparent;
+      border-top: $size solid $color;
+      margin-top: 0 - round( $size / 2.5 );
+  } @else if $direction == up {
+      border-left: $size solid transparent;
+      border-right: $size solid transparent;
+      border-bottom: $size solid $color;
+      margin-bottom: 0 - round( $size / 2.5 );
+  } @else if $direction == right {
+      border-top: $size solid transparent;
+      border-bottom: $size solid transparent;
+      border-left: $size solid $color;
+      margin-right: -$size;
+  } @else if  $direction == left {
+      border-top: $size solid transparent;
+      border-bottom: $size solid transparent;
+      border-right: $size solid $color;
+      margin-left: -$size;
+  }
+}
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin font-source($family: false, $size: false, $colour: false, $weight: false,  $lh: false) {
+  @if $family { font-family: $family, sans-serif; }
+  @if $size   {
+    font-size: rem($size);
+  }
+  @if $colour { color: $colour; }
+  @if $weight { font-weight: $weight; }
+  @if $lh     { line-height: $lh; }
+}
+
+@mixin mq($width, $type:max) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+@mixin push-auto {
+  margin: {
+    left: auto;
+    right: auto;
+  }
+}
+
+@mixin margin($mt:false, $mb:false, $auto: false, $mr:false, $ml:false) {
+  @if $mt{ margin-top: rem($mt); }
+  @if $mb { margin-bottom: rem($mb); }
+  @if $auto {
+    margin-left : auto;
+    margin-right: auto;
+  }
+  @if $mr { margin-right: rem($mr); }
+  @if $ml { margin-left: rem($ml); }
+}
+
+@mixin responsive-ratio($x,$y, $pseudo: false) {
+  $padding: unquote( ( $y / $x ) * 100 + '%' );
+  @if $pseudo {
+    &:before {
+      @include pseudo($pos: relative);
+      width: 100%;
+      padding-top: $padding;
+    }
+  } @else {
+    padding-top: $padding;
+  }
+}
+
+@mixin htmlFontControl($width, $size) {
+  @media screen and (max-width: $width) {
+    html {
+      font-size: $size;
+    }
+  }
+}

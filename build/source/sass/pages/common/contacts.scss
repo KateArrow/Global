@@ -1,0 +1,51 @@
+.contacts-section {
+    background: url(../img/contact-bg.png) 0 0 no-repeat;
+    background-size: cover;
+
+    &__section-content {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+        
+    &__links-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 300px;
+        width: 100%;
+        min-height: 360px;
+        padding: 40px 0;
+        box-sizing: border-box;
+        background-color: #0c0c0c;
+        box-shadow: 0 0 30px 0 rgba(0,0,0,0.75);
+    }
+
+    &__text-link {
+        @include font-source('Montserrat_Bold', 14px, #ffffff);                
+    }
+
+    &__btn-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 130px;
+        height: 38px;
+        @include font-source('Montserrat_Bold', 16px, #ffffff);                        
+        cursor: pointer;
+        
+            &_blue {
+                background-color: #1769ff;
+            }
+
+            &_pink {
+                background-color: #ea4c89;
+            }
+
+            &_dark-blue {
+                background-color: #0f33ff;
+            }
+    }
+    
+}

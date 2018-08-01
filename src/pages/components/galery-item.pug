@@ -1,0 +1,6 @@
+mixin galery-item(img, title)
+    a.galery-item&attributes(attributes)
+        .galery-item__img-wrapp
+            img(src=`${img}`).galery-item__img
+        .galery-item__title.
+            #{title}

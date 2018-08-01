@@ -1,0 +1,16 @@
+/* Libs */
+@import "../libs/normalize-css/normalize.css";
+
+/* Base */
+@import "global/global.variables";
+@import "./helpers/mixins";
+@import "./helpers/animations";
+@import "global/global.base";
+@import "global/global.sprite";
+
+// Components
+@import "./components/_style";
+
+// Pages
+@import "./pages/common/style";
+@import "./pages/index/style";

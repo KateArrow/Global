@@ -1,0 +1,17 @@
+.slider-section {
+    &__section-content {
+        padding-top: 20px + 36px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    &__title-section {
+        margin-top: 3%;
+        text-align: center;
+    }
+
+    &__slider {
+        margin-top: 50px;
+    }
+}

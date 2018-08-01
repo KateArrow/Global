@@ -1,0 +1,14 @@
+.section.galery-section
+    .section-content.galery-section__section-content
+        .galery-section__top-content
+            .galery-section__text-banner
+                .title-section.galery-section__title-section
+                    |We<br>believe in<br>passionate<br>people
+                .galery-section__hire-btn
+                    |Career
+                    +svg-icon('arrow', 'galery-section__btn-arrow')
+        .galery-section__galery
+            include ../components/galery-item
+            +galery-item('img/galery_1.jpg', 'Winners').galery-section__galery-item
+            +galery-item('img/galery_2.jpg', 'Philosophy').galery-section__galery-item
+            +galery-item('img/galery_3.jpg', 'History').galery-section__galery-item

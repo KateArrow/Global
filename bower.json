@@ -1,0 +1,21 @@
+{
+  "name": "Kate",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "KateArrow <nakonechna.katja@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/KateArrow/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/libs/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "^5.0.0",
+  }
+}

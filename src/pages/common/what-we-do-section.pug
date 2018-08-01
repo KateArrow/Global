@@ -1,0 +1,31 @@
+mixin work-item(text, id)
+    .what-we-do-section__item
+        input.what-we-do-section__checkbox(type="checkbox" id=`${id}`)
+        label.what-we-do-section__label(for=`${id}`)
+            +svg-icon('select-item', 'what-we-do-section__select-ico')
+            span.what-we-do-section__work-name
+                |#{text}
+
+.section.what-we-do-section
+    .section-content.what-we-do-section__section-content
+        .title-section.title-section_small.what-we-do-section__title-section
+            |You want us to do
+        .what-we-do-section__form
+            .what-we-do-section__form-row
+                +work-item('App Design', '1')
+                +work-item('Graphic Design', '2')
+                +work-item('Motion Design', '3')
+            .what-we-do-section__form-row
+                +work-item('UX Design', '4')
+                +work-item('Webdesign', '5')
+            .what-we-do-section__form-row
+                +work-item('Motion Design', '6')
+            .what-we-do-section__inputs-wrapper
+                .what-we-do-section__input-wrapp
+                    input(type="text" id="11" required).what-we-do-section__input
+                    label(for="11").what-we-do-section__send-form-label Name
+                .what-we-do-section__input-wrapp
+                    input(type="text" id="22" required).what-we-do-section__input
+                    label(for="22").what-we-do-section__send-form-label Email
+            .what-we-do-section__button-wrapper
+                button(type="submit").what-we-do-section__send-form-button Send Request

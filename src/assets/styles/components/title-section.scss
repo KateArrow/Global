@@ -1,0 +1,8 @@
+.title-section {
+    @include font-source('Montserrat_Black', 61px, #ffffff);
+        
+        &_small {
+    @include font-source('Montserrat_Black', 30px, #ffffff);
+            
+        }
+}

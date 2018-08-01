@@ -1,0 +1,33 @@
+.galery-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 170px;
+    cursor: pointer;
+    
+        &:hover &__title {
+            transform: translateY(0);
+        }
+        
+    &__img-wrapp {
+        width: inherit;
+        height: 95px; 
+        border: 10px solid #0f33ff;
+    }
+    
+    &__title {
+        margin-top: 5px;
+        @include font-source('Montserrat_Bold', 16px, #ffffff);                
+        text-transform: uppercase;
+        transform: translateY(-14px);
+        transition: all .3s;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+}

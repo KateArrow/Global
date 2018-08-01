@@ -1,0 +1,17 @@
+.hire-us-btn {
+    display: flex;
+    position: fixed;
+    left: 50%;
+    top: 20px;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    width: 120px;
+    min-height: 30px;
+    @include font-source('Montserrat_Bold', 17px, #ffffff);        
+    background: #0f33ff;
+    cursor: pointer;
+    transition: all .3s;
+    transform: translateX(-50%);
+    z-index: 10;
+}

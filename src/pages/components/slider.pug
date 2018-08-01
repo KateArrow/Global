@@ -1,0 +1,20 @@
+mixin slider__slide(img, title, desc)
+    .slider__slide&attributes(attributes)
+        .slider__slide-img
+            img(src=`${img}`)
+        .slider__slide-title.
+            #{title}
+        .slider__slide-desc.
+            #{desc}
+
+.slider
+    .slider__btn(data-direction="left")
+        +svg-icon('arrow', 'slider__btn-arrow')
+    .slider__btn(data-direction="right")
+        +svg-icon('arrow', 'slider__btn-arrow')
+    .slider__container
+        .slider__slides-wrapper
+            +slider__slide('img/work-victory.jpg', 'Victory', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.')
+            +slider__slide('img/work-metiew-smith.jpg', 'Metiew & Smith', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.')
+            +slider__slide('img/work-alex-nowak.jpg', 'Alex Nowak', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.')
+            //- +slider__slide('img/work-metiew-smith.jpg', 'Metiew & Smith', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.')
